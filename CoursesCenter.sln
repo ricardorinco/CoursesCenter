@@ -22,12 +22,32 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.1 - Data", "5.1 - Data", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.2 - CrossCutting", "5.2 - CrossCutting", "{7993DDB9-A361-4556-9019-A301E9A3F110}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RR.CoursesCenter.Domain", "src\RR.CoursesCenter.Domain\RR.CoursesCenter.Domain.csproj", "{2386CCD5-54F2-48BA-BD71-3879BA02F02A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RR.CoursesCenter.Domain.Tests", "tests\RR.CoursesCenter.Domain.Tests\RR.CoursesCenter.Domain.Tests.csproj", "{8120D866-8AA2-499D-84CD-A381FBD9FA2F}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2386CCD5-54F2-48BA-BD71-3879BA02F02A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2386CCD5-54F2-48BA-BD71-3879BA02F02A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2386CCD5-54F2-48BA-BD71-3879BA02F02A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2386CCD5-54F2-48BA-BD71-3879BA02F02A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8120D866-8AA2-499D-84CD-A381FBD9FA2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8120D866-8AA2-499D-84CD-A381FBD9FA2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8120D866-8AA2-499D-84CD-A381FBD9FA2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8120D866-8AA2-499D-84CD-A381FBD9FA2F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BDF4FE79-0E1F-40F5-ABEB-8BA8271928C9} = {707F0F8E-11E7-41E1-A7D1-27D2FFA16B60}
 		{7993DDB9-A361-4556-9019-A301E9A3F110} = {707F0F8E-11E7-41E1-A7D1-27D2FFA16B60}
+		{2386CCD5-54F2-48BA-BD71-3879BA02F02A} = {B1A44A90-FCD1-4DFA-A292-77CCE885FE83}
+		{8120D866-8AA2-499D-84CD-A381FBD9FA2F} = {B1A44A90-FCD1-4DFA-A292-77CCE885FE83}
 	EndGlobalSection
 EndGlobal
