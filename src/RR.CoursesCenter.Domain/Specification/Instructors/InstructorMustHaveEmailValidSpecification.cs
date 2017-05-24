@@ -1,6 +1,6 @@
 ﻿using DomainValidation.Interfaces.Specification;
 using RR.CoursesCenter.Domain.Models;
-using RR.CoursesCenter.Domain.Validation.Base;
+using RR.CoursesCenter.Domain.Validation;
 
 namespace RR.CoursesCenter.Domain.Specification.Instructors
 {

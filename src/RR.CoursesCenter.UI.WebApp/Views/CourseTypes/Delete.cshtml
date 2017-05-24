@@ -1,0 +1,37 @@
+﻿@using RR.CoursesCenter.UI.WebApp.Filters;
+@model RR.CoursesCenter.Application.ViewModels.CourseTypeViewModel
+
+<h2>@ViewBag.Title</h2>
+<h4>Tem certeza de que deseja excluir este registro?</h4>
+<hr />
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Html.DisplayFor(model => model.Identification)</div>
+    <br />
+    <div>
+        <dl class="dl-horizontal">
+            <dt>@Html.DisplayNameFor(model => model.Active)</dt>
+            <dd>
+                @{
+                    var active = Model.Active ? "Sim" : "Não";
+                    @Html.DisplayFor(model => active)
+                }
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        if (this.IfClaim("CourseType", "DE"))
+        {
+            <input type="submit" value="Deletar" class="btn btn-danger" />
+        }
+        <a href="@Url.Action("Index", "CourseTypes")" class="btn btn-default">
+            <span title="Lista Estudantes Ativos">Voltar</span>
+        </a>
+    }
+</div>

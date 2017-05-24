@@ -1,0 +1,86 @@
+﻿@using RR.CoursesCenter.UI.WebApp.Filters;
+@model IEnumerable<RR.CoursesCenter.Application.ViewModels.StudentViewModel>
+
+@{
+    if (this.IfClaim("Student", "AD"))
+    {
+        <a href="@Url.Action("Create", "Students")" class="btn btn-success">
+            <span title="Criar um Novo Estudante">Novo</span>
+        </a>
+    }
+
+    if (this.IfClaim("Student", "LA") && (ViewBag.Control == "ListInactive" || ViewBag.Control == "ListAll"))
+    {
+        <a href="@Url.Action("Index", "Students")" class="btn btn-default">
+            <span title="Lista Estudantes Ativos">Ativos</span>
+        </a>
+    }
+
+    if (this.IfClaim("Student", "LA") && (ViewBag.Control == "Index" || ViewBag.Control == "ListAll"))
+    {
+        <a href="@Url.Action("ListInactive", "Students")" class="btn btn-default">
+            <span title="Lista Estudantes Inativos">Inativos</span>
+        </a>
+    }
+
+    if (this.IfClaim("Student", "LA") && (ViewBag.Control == "Index" || ViewBag.Control == "ListInactive"))
+    {
+        <a href="@Url.Action("ListAll", "Students")" class="btn btn-default">
+            <span title="Lista Todos os Estudantes">Todos</span>
+        </a>
+    }
+}
+
+<hr />
+<div class="panel panel-default">
+    <div class="panel-heading">@ViewBag.Title</div>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th style="text-align: center;">@Html.DisplayNameFor(model => model.AcademicRegistration)</th>
+                <th style="text-align: center;">@Html.DisplayNameFor(model => model.Identification)</th>
+                <th style="text-align: center;">@Html.DisplayNameFor(model => model.BirthDate)</th>
+                <th style="text-align: center;">@Html.DisplayNameFor(model => model.Email)</th>
+                <th style="text-align: center;">@Html.DisplayNameFor(model => model.Active)</th>
+                <th style="text-align: center;">Ações</th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td align="right">@Html.DisplayFor(modelItem => item.AcademicRegistration)</td>
+                <td>@Html.DisplayFor(modelItem => item.Identification)</td>
+                <td align="center">
+                    @{
+                        var birthDate = item.BirthDate.Value.ToString("dd/MM/yyyy");
+                        @Html.DisplayFor(modelItem => birthDate)
+                    }
+                </td>
+                <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                <td align="center">@Html.DisplayFor(modelItem => item.Active)</td>
+                <td align="center">
+                    @if (this.IfClaim("Student", "ED"))
+                    {
+                        <a href="@Url.Action("Edit", "Students", new { id = item.Id })" class="btn btn-warning">
+                            <span title="Editar" class="glyphicon glyphicon-pencil"></span>
+                        </a>
+                    }
+
+                    @if (this.IfClaim("Student", "VI"))
+                    {
+                        <a href="@Url.Action("Details", "Students", new {id = item.Id})" class="btn btn-info">
+                            <span title="Detalhes" class="glyphicon glyphicon-search"></span>
+                        </a>
+                    }
+
+                    @if (this.IfClaim("Student", "DE"))
+                    {
+                        <a href="@Url.Action("Delete", "Students", new {id = item.Id})" class="btn btn-danger">
+                            <span title="Excluir" class="glyphicon glyphicon-trash"></span>
+                        </a>
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+</div>

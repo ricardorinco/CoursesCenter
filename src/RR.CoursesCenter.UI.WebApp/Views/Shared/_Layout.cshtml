@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Courses Center", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Cursos", "Index", "Courses")</li>
+
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Administração<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li class="dropdown-header">Curso</li>
+                                <li>@Html.ActionLink("Cadastro", "Create", "Courses")</li>
+                                <li>@Html.ActionLink("Listagem", "Index", "Courses")</li>
+                                <li role="separator" class="divider"></li>
+
+                                <li class="dropdown-header">Estudante</li>
+                                <li>@Html.ActionLink("Cadastro", "Create", "Students")</li>
+                                <li>@Html.ActionLink("Listagem", "Index", "Students")</li>
+                                <li role="separator" class="divider"></li>
+
+                                <li class="dropdown-header">Instrutor</li>
+                                <li>@Html.ActionLink("Cadastro", "Create", "Instructors")</li>
+                                <li>@Html.ActionLink("Listagem", "Index", "Instructors")</li>
+                                <li role="separator" class="divider"></li>
+
+                                <li class="dropdown-header">Tipo de Curso</li>
+                                <li>@Html.ActionLink("Cadastro", "Create", "CourseTypes")</li>
+                                <li>@Html.ActionLink("Listagem", "Index", "CourseTypes")</li>
+                            </ul>
+                        </li>
+                    }
+
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <br />
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Courses Center</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

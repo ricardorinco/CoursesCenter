@@ -1,0 +1,48 @@
+﻿@using RR.CoursesCenter.UI.WebApp.Filters;
+@model RR.CoursesCenter.Application.ViewModels.CourseViewModel
+
+<h2>@ViewBag.Title</h2>
+<hr />
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Html.DisplayFor(model => model.Identification)</div>
+    <br />
+    <div>
+        <dl class="dl-horizontal">
+            <dt>@Html.DisplayNameFor(model => model.CourseTypeId)</dt>
+            <dd>@Html.DisplayFor(model => model.CourseType.Identification)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.InstructorId)</dt>
+            <dd>@Html.DisplayFor(model => model.Instructor.Identification)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Price)</dt>
+            <dd>
+                @{
+                    var price = string.Format("{0:C}", Model.Price);
+                    @Html.DisplayFor(model => price)
+                }
+            </dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Active)</dt>
+            <dd>
+                @{
+                    var active = Model.Active ? "Sim" : "Não";
+                    @Html.DisplayFor(model => active)
+                }
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<div>
+    @if (this.IfClaim("Course", "ED"))
+    {
+        <a href="@Url.Action("Edit", "Courses", new { id = Model.Id })" class="btn btn-warning">
+            <span title="Editar Curso">Editar</span>
+        </a>
+    }
+
+    <a href="@Url.Action("Index", "Courses")" class="btn btn-default">
+        <span title="Lista Cursos Ativos">Voltar</span>
+    </a>
+</div>

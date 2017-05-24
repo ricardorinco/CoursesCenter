@@ -3,28 +3,38 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Documentation", "0 - Documentation", "{C4118205-6D90-4A88-B451-E80CF732095B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{5D75CE4A-E7A0-4BA8-A037-27B6F6493930}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Services", "2 - Services", "{2ADC180F-7EA6-4B58-933F-CFBE4915F107}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Application", "3 - Application", "{FFE442B9-3C2F-4563-BF0C-262494E5B9EF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Domain", "4 - Domain", "{7E34C92C-04CD-41B6-A95E-A061512AD287}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Infrastructure", "5 - Infrastructure", "{C3CED501-1C66-4324-A47A-F9258BBB00D5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.1 - Data", "5.1 - Data", "{2639E397-5228-4E58-9B5B-AAEF1A21D6BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RR.CoursesCenter.Infrastructure.Data", "src\RR.CoursesCenter.Infrastructure.Data\RR.CoursesCenter.Infrastructure.Data.csproj", "{CDD33C72-8AFF-4025-B1A1-8F589B18AC34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RR.CoursesCenter.Domain", "src\RR.CoursesCenter.Domain\RR.CoursesCenter.Domain.csproj", "{D47AF00B-50B8-4822-9379-0969A07B64C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RR.CoursesCenter.Application", "src\RR.CoursesCenter.Application\RR.CoursesCenter.Application.csproj", "{5BAE9B66-AC62-4C1E-ADAE-654FA024E44F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RR.CoursesCenter.UI.WebApp", "src\RR.CoursesCenter.UI.WebApp\RR.CoursesCenter.UI.WebApp.csproj", "{22223F21-62AB-44F4-81EF-CF6AD0386AF3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.2 - CrossCutting", "5.2 - CrossCutting", "{92DDD6D9-D96A-4D19-B1B9-2F6D708F491B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RR.CoursesCenter.Infrastructure.Data.CrossCutting.IoC", "src\RR.CoursesCenter.Infrastructure.Data.CrossCutting.IoC\RR.CoursesCenter.Infrastructure.Data.CrossCutting.IoC.csproj", "{6371FAA6-D82E-4286-9AFA-F94E99B63C32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RR.CoursesCenter.Domain.Tests", "tests\RR.CoursesCenter.Domain.Tests\RR.CoursesCenter.Domain.Tests.csproj", "{7F4D81D3-1F3B-48DC-BE73-A82AA761F158}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RR.CoursesCenter.Rest.StudentAPI", "src\RR.CoursesCenter.Rest.StudentAPI\RR.CoursesCenter.Rest.StudentAPI.csproj", "{6F3BE3D6-4291-42C5-B4BC-BB149ECD9F48}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Documentation", "0 - Documentation", "{F3173BE9-5CF0-440E-8B24-B76518D30B9A}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{FE1C91E5-E577-4211-91EE-92648F185712}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Services", "2 - Services", "{B4A7B404-D754-4A9E-B7DE-68BE0B0B8968}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Application", "3 - Application", "{2E991B74-D4BF-45F0-97CA-3ACFC0FF1FD4}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Domain", "4 - Domain", "{B1A44A90-FCD1-4DFA-A292-77CCE885FE83}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Infrastructure", "5 - Infrastructure", "{707F0F8E-11E7-41E1-A7D1-27D2FFA16B60}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.1 - Data", "5.1 - Data", "{BDF4FE79-0E1F-40F5-ABEB-8BA8271928C9}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.2 - CrossCutting", "5.2 - CrossCutting", "{7993DDB9-A361-4556-9019-A301E9A3F110}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RR.CoursesCenter.Domain", "src\RR.CoursesCenter.Domain\RR.CoursesCenter.Domain.csproj", "{2386CCD5-54F2-48BA-BD71-3879BA02F02A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RR.CoursesCenter.Domain.Tests", "tests\RR.CoursesCenter.Domain.Tests\RR.CoursesCenter.Domain.Tests.csproj", "{8120D866-8AA2-499D-84CD-A381FBD9FA2F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,22 +42,47 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2386CCD5-54F2-48BA-BD71-3879BA02F02A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2386CCD5-54F2-48BA-BD71-3879BA02F02A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2386CCD5-54F2-48BA-BD71-3879BA02F02A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2386CCD5-54F2-48BA-BD71-3879BA02F02A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8120D866-8AA2-499D-84CD-A381FBD9FA2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8120D866-8AA2-499D-84CD-A381FBD9FA2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8120D866-8AA2-499D-84CD-A381FBD9FA2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8120D866-8AA2-499D-84CD-A381FBD9FA2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDD33C72-8AFF-4025-B1A1-8F589B18AC34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDD33C72-8AFF-4025-B1A1-8F589B18AC34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDD33C72-8AFF-4025-B1A1-8F589B18AC34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDD33C72-8AFF-4025-B1A1-8F589B18AC34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D47AF00B-50B8-4822-9379-0969A07B64C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D47AF00B-50B8-4822-9379-0969A07B64C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D47AF00B-50B8-4822-9379-0969A07B64C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D47AF00B-50B8-4822-9379-0969A07B64C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BAE9B66-AC62-4C1E-ADAE-654FA024E44F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BAE9B66-AC62-4C1E-ADAE-654FA024E44F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BAE9B66-AC62-4C1E-ADAE-654FA024E44F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BAE9B66-AC62-4C1E-ADAE-654FA024E44F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22223F21-62AB-44F4-81EF-CF6AD0386AF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22223F21-62AB-44F4-81EF-CF6AD0386AF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22223F21-62AB-44F4-81EF-CF6AD0386AF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22223F21-62AB-44F4-81EF-CF6AD0386AF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6371FAA6-D82E-4286-9AFA-F94E99B63C32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6371FAA6-D82E-4286-9AFA-F94E99B63C32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6371FAA6-D82E-4286-9AFA-F94E99B63C32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6371FAA6-D82E-4286-9AFA-F94E99B63C32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F4D81D3-1F3B-48DC-BE73-A82AA761F158}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F4D81D3-1F3B-48DC-BE73-A82AA761F158}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F4D81D3-1F3B-48DC-BE73-A82AA761F158}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F4D81D3-1F3B-48DC-BE73-A82AA761F158}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F3BE3D6-4291-42C5-B4BC-BB149ECD9F48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F3BE3D6-4291-42C5-B4BC-BB149ECD9F48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F3BE3D6-4291-42C5-B4BC-BB149ECD9F48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F3BE3D6-4291-42C5-B4BC-BB149ECD9F48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{BDF4FE79-0E1F-40F5-ABEB-8BA8271928C9} = {707F0F8E-11E7-41E1-A7D1-27D2FFA16B60}
-		{7993DDB9-A361-4556-9019-A301E9A3F110} = {707F0F8E-11E7-41E1-A7D1-27D2FFA16B60}
-		{2386CCD5-54F2-48BA-BD71-3879BA02F02A} = {B1A44A90-FCD1-4DFA-A292-77CCE885FE83}
-		{8120D866-8AA2-499D-84CD-A381FBD9FA2F} = {B1A44A90-FCD1-4DFA-A292-77CCE885FE83}
+		{2639E397-5228-4E58-9B5B-AAEF1A21D6BD} = {C3CED501-1C66-4324-A47A-F9258BBB00D5}
+		{CDD33C72-8AFF-4025-B1A1-8F589B18AC34} = {2639E397-5228-4E58-9B5B-AAEF1A21D6BD}
+		{D47AF00B-50B8-4822-9379-0969A07B64C8} = {7E34C92C-04CD-41B6-A95E-A061512AD287}
+		{5BAE9B66-AC62-4C1E-ADAE-654FA024E44F} = {FFE442B9-3C2F-4563-BF0C-262494E5B9EF}
+		{22223F21-62AB-44F4-81EF-CF6AD0386AF3} = {5D75CE4A-E7A0-4BA8-A037-27B6F6493930}
+		{92DDD6D9-D96A-4D19-B1B9-2F6D708F491B} = {C3CED501-1C66-4324-A47A-F9258BBB00D5}
+		{6371FAA6-D82E-4286-9AFA-F94E99B63C32} = {92DDD6D9-D96A-4D19-B1B9-2F6D708F491B}
+		{7F4D81D3-1F3B-48DC-BE73-A82AA761F158} = {7E34C92C-04CD-41B6-A95E-A061512AD287}
+		{6F3BE3D6-4291-42C5-B4BC-BB149ECD9F48} = {2ADC180F-7EA6-4B58-933F-CFBE4915F107}
 	EndGlobalSection
 EndGlobal

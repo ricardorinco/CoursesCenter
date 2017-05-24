@@ -1,0 +1,48 @@
+﻿@using RR.CoursesCenter.UI.WebApp.Filters;
+@model RR.CoursesCenter.Application.ViewModels.InstructorViewModel
+
+<h2>@ViewBag.Title</h2>
+<hr />
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Html.DisplayFor(model => model.Identification)</div>
+    <br />
+    <div>
+        <dl class="dl-horizontal">
+            <dt>@Html.DisplayNameFor(model => model.LicenseNumber)</dt>
+            <dd>@Html.DisplayFor(model => model.LicenseNumber)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.BirthDate)</dt>
+            <dd>
+                @{
+                    var birthDate = Model.BirthDate.Value.ToString("dd/MM/yyyy");
+                    @Html.DisplayFor(model => birthDate)
+                }
+            </dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Email)</dt>
+            <dd>@Html.DisplayFor(model => model.Email)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Active)</dt>
+            <dd>
+                @{
+                    var active = Model.Active ? "Sim" : "Não";
+                    @Html.DisplayFor(model => active)
+                }
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<div>
+    @if (this.IfClaim("Instructor", "ED"))
+    {
+        <a href="@Url.Action("Edit", "Instructors", new { id = Model.Id })" class="btn btn-warning">
+            <span title="Editar Instrutor">Editar</span>
+        </a>
+    }
+
+    <a href="@Url.Action("Index", "Instructors")" class="btn btn-default">
+        <span title="Lista Instrutores Ativos">Voltar</span>
+    </a>
+</div>

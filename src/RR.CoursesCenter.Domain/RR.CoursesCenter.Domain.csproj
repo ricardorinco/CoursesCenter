@@ -4,13 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2386CCD5-54F2-48BA-BD71-3879BA02F02A}</ProjectGuid>
+    <ProjectGuid>{D47AF00B-50B8-4822-9379-0969A07B64C8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RR.CoursesCenter.Domain</RootNamespace>
     <AssemblyName>RR.CoursesCenter.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,26 +41,60 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\Repository\ICourseRepository.cs" />
+    <Compile Include="Interfaces\Repository\ICourseTypeRepository.cs" />
+    <Compile Include="Interfaces\Repository\IInstructorRepository.cs" />
+    <Compile Include="Interfaces\Repository\IOrderDetailRepository.cs" />
+    <Compile Include="Interfaces\Repository\IOrderRepository.cs" />
+    <Compile Include="Interfaces\Repository\IRepository.cs" />
+    <Compile Include="Interfaces\Repository\IStudentRepository.cs" />
+    <Compile Include="Interfaces\Services\ICourseService.cs" />
+    <Compile Include="Interfaces\Services\ICourseTypeService.cs" />
+    <Compile Include="Interfaces\Services\IInstructorService.cs" />
+    <Compile Include="Interfaces\Services\IStudentService.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\CourseType.cs" />
     <Compile Include="Models\Entity.cs" />
     <Compile Include="Models\Instructor.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetail.cs" />
+    <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Specification\CourseTypes\CourseTypeContainsIdentificationSpecification.cs" />
-    <Compile Include="Specification\Instructors\InstructorContainsLastNameSpecification.cs" />
-    <Compile Include="Specification\Instructors\InstructorContainsFirstNameSpecification.cs" />
-    <Compile Include="Specification\Instructors\InstructorMustBeOfAgeSpecification.cs" />
+    <Compile Include="Services\CourseService.cs" />
+    <Compile Include="Services\CourseTypeService.cs" />
+    <Compile Include="Services\InstructorService.cs" />
+    <Compile Include="Services\StudentService.cs" />
+    <Compile Include="Specification\Courses\CourseMustBeContainCourseTypeSpecification.cs" />
+    <Compile Include="Specification\Courses\CourseMustBeContainInstructorSpecification.cs" />
+    <Compile Include="Specification\Courses\CoursePriceCanNotBeNegativeSpecification.cs" />
+    <Compile Include="Specification\CourseTypes\CourseTypeMustContainIdentificationSpecification.cs" />
+    <Compile Include="Specification\Courses\CourseMustContainIdentificationSpecification.cs" />
+    <Compile Include="Specification\Instructors\InstructorMustBeOlderSpecification.cs" />
+    <Compile Include="Specification\Instructors\InstructorMustContainIdentificationSpecification.cs" />
     <Compile Include="Specification\Instructors\InstructorMustHaveEmailValidSpecification.cs" />
-    <Compile Include="Validation\Base\EmailValidation.cs" />
-    <Compile Include="Validation\Base\StringValidation.cs" />
-    <Compile Include="Validation\Base\OfAgeValidation.cs" />
-    <Compile Include="Validation\Base\PriceValidation.cs" />
+    <Compile Include="Specification\Instructors\InstructorMustHaveUniqueLicenseNumberSpecification.cs" />
+    <Compile Include="Specification\Instructors\InstructorMustHaveUniqueEmailSpecification.cs" />
+    <Compile Include="Specification\Students\StudentMustBeOlderSpecification.cs" />
+    <Compile Include="Specification\Students\StudentMustContainIdentificationSpecification.cs" />
+    <Compile Include="Specification\Students\StudentMustHaveEmailValidSpecification.cs" />
+    <Compile Include="Specification\Students\StudentMustHaveUniqueAcademicRegistrationSpecification.cs" />
+    <Compile Include="Specification\Students\StudentMustHaveUniqueEmailSpecification.cs" />
+    <Compile Include="Validation\BeOlderValidation.cs" />
+    <Compile Include="Validation\Courses\CourseIsConsistentValidation.cs" />
+    <Compile Include="Validation\Courses\CourseReadyToRegisterValidation.cs" />
     <Compile Include="Validation\CourseTypes\CourseTypeIsConsistentValidation.cs" />
+    <Compile Include="Validation\EmailValidation.cs" />
+    <Compile Include="Validation\IdentificationValidation.cs" />
+    <Compile Include="Validation\Instructors\InstructorIsConsistentValidation.cs" />
+    <Compile Include="Validation\Instructors\InstructorReadyToRegisterValidation.cs" />
+    <Compile Include="Validation\PriceValidation.cs" />
+    <Compile Include="Validation\Students\StudentIsConsistentValidation.cs" />
+    <Compile Include="Validation\Students\StudentReadyToRegisterValidation.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

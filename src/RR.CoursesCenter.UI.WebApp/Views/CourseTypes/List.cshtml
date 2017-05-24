@@ -1,0 +1,75 @@
+﻿@using RR.CoursesCenter.UI.WebApp.Filters;
+@model IEnumerable<RR.CoursesCenter.Application.ViewModels.CourseTypeViewModel>
+
+@{ 
+    if (this.IfClaim("CourseType", "AD"))
+    {
+        <a href="@Url.Action("Create", "CourseTypes")" class="btn btn-success">
+            <span title="Criar um Novo Tipo de Curso">Novo</span>
+        </a>
+    }
+
+    if (this.IfClaim("CourseType", "LA") && (ViewBag.Control == "ListInactive" || ViewBag.Control == "ListAll"))
+    {
+        <a href="@Url.Action("Index", "CourseTypes")" class="btn btn-default">
+            <span title="Lista Tipos de Cursos Ativos">Ativos</span>
+        </a>
+    }
+
+    if (this.IfClaim("CourseType", "LA") && (ViewBag.Control == "Index" || ViewBag.Control == "ListAll"))
+    {
+        <a href="@Url.Action("ListInactive", "CourseTypes")" class="btn btn-default">
+            <span title="Lista Tipos de Cursos Inativos">Inativos</span>
+        </a>
+    }
+
+    if (this.IfClaim("CourseType", "LA") && (ViewBag.Control == "Index" || ViewBag.Control == "ListInactive"))
+    {
+        <a href="@Url.Action("ListAll", "CourseTypes")" class="btn btn-default">
+            <span title="Lista Todos os Tipos de Cursos">Todos</span>
+        </a>
+    }
+}
+
+<hr />
+<div class="panel panel-default">
+    <div class="panel-heading">@ViewBag.Title</div>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th style="text-align: center;">@Html.DisplayNameFor(model => model.Identification)</th>
+                <th style="text-align: center;">@Html.DisplayNameFor(model => model.Active)</th>
+                <th style="text-align: center;">Ações</th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Identification)</td>
+                <td align="center">@Html.DisplayFor(modelItem => item.Active)</td>
+                <td align="center">
+                    @if (this.IfClaim("CourseType", "ED"))
+                    {
+                        <a href="@Url.Action("Edit", "CourseTypes", new { id = item.Id })" class="btn btn-warning">
+                            <span title="Editar" class="glyphicon glyphicon-pencil"></span>
+                        </a>
+                    }
+
+                    @if (this.IfClaim("CourseType", "VI"))
+                    {
+                        <a href="@Url.Action("Details", "CourseTypes", new {id = item.Id})" class="btn btn-info">
+                            <span title="Detalhes" class="glyphicon glyphicon-search"></span>
+                        </a>
+                    }
+
+                    @if (this.IfClaim("CourseType", "DE"))
+                    {
+                        <a href="@Url.Action("Delete", "CourseTypes", new {id = item.Id})" class="btn btn-danger">
+                            <span title="Excluir" class="glyphicon glyphicon-trash"></span>
+                        </a>
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+</div>

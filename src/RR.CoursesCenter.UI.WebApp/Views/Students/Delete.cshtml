@@ -1,0 +1,51 @@
+﻿@using RR.CoursesCenter.UI.WebApp.Filters;
+@model RR.CoursesCenter.Application.ViewModels.StudentViewModel
+
+<h2>@ViewBag.Title</h2>
+<h4>Tem certeza de que deseja excluir este registro?</h4>
+<hr />
+
+<div class="panel panel-default">
+    <div class="panel-heading">@Html.DisplayFor(model => model.Identification)</div>
+    <br />
+    <div>
+        <dl class="dl-horizontal">
+            <dt>@Html.DisplayNameFor(model => model.AcademicRegistration)</dt>
+            <dd>@Html.DisplayFor(model => model.AcademicRegistration)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.BirthDate)</dt>
+            <dd>
+                @{
+                    var birthDate = Model.BirthDate.Value.ToString("dd/MM/yyyy");
+                    @Html.DisplayFor(model => birthDate)
+                }
+            </dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Email)</dt>
+            <dd>@Html.DisplayFor(model => model.Email)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Active)</dt>
+            <dd>
+                @{
+                    var active = Model.Active ? "Sim" : "Não";
+                    @Html.DisplayFor(model => active)
+                }
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        if (this.IfClaim("Student", "DE"))
+        {
+            <input type="submit" value="Deletar" class="btn btn-danger" />
+        }
+        <a href="@Url.Action("Index", "Students")" class="btn btn-default">
+            <span title="Lista Estudantes Ativos">Voltar</span>
+        </a>
+    }
+</div>

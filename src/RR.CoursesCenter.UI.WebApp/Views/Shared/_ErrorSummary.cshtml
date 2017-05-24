@@ -1,0 +1,17 @@
+﻿@if (ViewData.ModelState[""] != null && ViewData.ModelState[""].Errors.Any())
+{
+    <div class="alert alert-dismissible alert-danger">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <h3>Ops... Parece que alguma coisa não deu certo:</h3>
+        <br />
+        @Html.ValidationSummary(true)
+    </div>
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.Sucesso))
+{
+    <div class="alert alert-dismissible alert-success">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <h3>@ViewBag.Sucesso</h3>
+    </div>
+}

@@ -8,9 +8,9 @@ namespace RR.CoursesCenter.Domain.Validation.CourseTypes
     {
         public CourseTypeIsConsistentValidation()
         {
-            var couseTypeIdentification = new CourseTypeContainsIdentificationSpecification();
+            var courseTypeIdentification = new CourseTypeMustContainIdentificationSpecification();
 
-            Add("couseTypeIdentification", new Rule<CourseType>(couseTypeIdentification, "A identificação do Tipo de Curso deve conter no mínimo 3 caracteres."));
+            Add("courseTypeIdentification", new Rule<CourseType>(courseTypeIdentification, "A identificação do Tipo de Curso deve conter no mínimo 3 caracteres."));
         }
     }
 }
