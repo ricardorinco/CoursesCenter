@@ -24,11 +24,8 @@ namespace RR.CoursesCenter.Infrastructure.Data.Context
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
 
-            modelBuilder.Properties<string>()
-                .Configure(p => p.HasColumnType("varchar"));
-
-            modelBuilder.Properties<string>()
-                .Configure(p => p.HasMaxLength(100));
+            modelBuilder.Properties<string>().Configure(p => p.HasColumnType("varchar"));
+            modelBuilder.Properties<string>().Configure(p => p.HasMaxLength(100));
 
             modelBuilder.Configurations.Add(new CourseConfiguration());
             modelBuilder.Configurations.Add(new CourseTypeConfiguration());

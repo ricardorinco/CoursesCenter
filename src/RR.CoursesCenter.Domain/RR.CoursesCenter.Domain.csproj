@@ -51,6 +51,7 @@
     <Compile Include="Interfaces\Services\ICourseService.cs" />
     <Compile Include="Interfaces\Services\ICourseTypeService.cs" />
     <Compile Include="Interfaces\Services\IInstructorService.cs" />
+    <Compile Include="Interfaces\Services\IService.cs" />
     <Compile Include="Interfaces\Services\IStudentService.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\CourseType.cs" />
