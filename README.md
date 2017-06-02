@@ -1,9 +1,12 @@
-﻿# Courses Center
+# Courses Center
 ###### Domain-Driven Design Sample
 
 This is a study on Domain-Driven Design (DDD) by Eric Evans.
 
 <br>
+
+## Architecture
+![](http://insidecode.com.br/github/CoursesCenter/ddd_architecture.jpg)
 
 ## Technology
 
