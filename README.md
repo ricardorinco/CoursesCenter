@@ -1,3 +1,5 @@
+> **Josué 1:9** Não fui eu que ordenei a você? Seja forte e corajoso! Não se apavore nem desanime, pois o Senhor, o seu Deus, estará com você por onde você andar"
+
 # Courses Center
 ###### Domain-Driven Design Sample
 
